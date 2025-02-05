@@ -1,0 +1,19 @@
+{
+  "function": {
+    "YelpReviewScraper": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "storage": {
+    "restaurant": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "review": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}

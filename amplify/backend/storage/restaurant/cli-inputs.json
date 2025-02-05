@@ -1,0 +1,14 @@
+{
+  "resourceName": "restaurant",
+  "tableName": "restaurant",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "rating",
+    "fieldType": "number"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
