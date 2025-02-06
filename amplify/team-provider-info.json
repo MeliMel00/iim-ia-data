@@ -9,15 +9,23 @@
       "UnauthRoleName": "amplify-iimdata-dev-3c978-unauthRole",
       "StackName": "amplify-iimdata-dev-3c978",
       "StackId": "arn:aws:cloudformation:eu-west-1:794038245427:stack/amplify-iimdata-dev-3c978/ae81d9e0-e219-11ef-a0fd-0aaa993a3a17",
-      "AmplifyAppId": "d3qdymx7dcgcbp"
+      "AmplifyAppId": "d3qdymx7dcgcbp",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-iimdata-dev-3c978-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "storage": {
         "restaurant": {},
-        "review": {}
+        "review": {},
+        "restaurantDb": {}
       },
       "function": {
-        "YelpReviewScraper": {}
+        "restaurantLambdaApi": {
+          "deploymentBucketName": "amplify-iimdata-dev-3c978-deployment",
+          "s3Key": "amplify-builds/restaurantLambdaApi-78342b2b2b7863344762-build.zip"
+        }
+      },
+      "api": {
+        "restaurant": {}
       }
     }
   }

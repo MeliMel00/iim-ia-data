@@ -1,13 +1,72 @@
 {
+  "api": {
+    "restaurant": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "restaurantLambdaApi"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {},
   "function": {
-    "YelpReviewScraper": {
+    "restaurantLambdaApi": {
       "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "review"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "restaurantDb"
+        }
+      ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
+  "parameters": {
+    "AMPLIFY_function_restaurantLambdaApi_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "restaurantLambdaApi"
+        }
+      ]
+    },
+    "AMPLIFY_function_restaurantLambdaApi_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "restaurantLambdaApi"
+        }
+      ]
+    }
+  },
   "storage": {
     "restaurant": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "restaurantDb": {
       "providerPlugin": "awscloudformation",
       "service": "DynamoDB"
     },
